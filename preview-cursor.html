@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Preview Cursors</title>
+  <style>
+    body { background: #0a0a0a; padding: 20px; font-family: monospace; }
+    .preview { display: flex; gap: 40px; margin-bottom: 30px; }
+    .item { text-align: center; }
+    .item img { width: 128px; height: 128px; border: 2px solid #00ff00; padding: 10px; }
+    .item p { color: #00ff00; margin-top: 10px; }
+    .demo { width: 100%; height: 200px; border: 2px solid #00ff00; display: flex; align-items: center; justify-content: center; }
+    .demo p { color: #00ff00; }
+    h1 { color: #00ff00; }
+  </style>
+</head>
+<body>
+  <h1>ELIGE TU CURSOR</h1>
+  <div class="preview">
+    <div class="item">
+      <img src="cursor.svg" alt="Dragon">
+      <p>DRAGON (actual)</p>
+    </div>
+    <div class="item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="128" height="128" style="border:2px solid #00ff00;padding:10px;background:#0a0a0a;">
+        <path fill="#00ff00" d="M256 0C114.6 0 0 100.3 0 224c0 70.1 36.9 132.6 94.5 173.7 9.6 6.9 15.2 18.1 13.5 29.9l-9.4 66.2c-1.4 9.6 6 18.2 15.7 18.2H192v-56c0-4.4 3.6-8 8-8h16c4.4 0 8 3.6 8 8v56h64v-56c0-4.4 3.6-8 8-8h16c4.4 0 8 3.6 8 8v56h77.7c9.7 0 17.1-8.6 15.7-18.2l-9.4-66.2c-1.7-11.7 3.8-23 13.5-29.9C475.1 356.6 512 294.1 512 224 512 100.3 397.4 0 256 0zm-96 320c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zm192 0c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/>
+      </svg>
+      <p>SKULL (prueba)</p>
+    </div>
+  </div>
+  <div class="demo" style="cursor: url('cursor.svg'), pointer;">
+    <p>PASÁ EL MOUSE ACÁ - deberias ver el DRAGÓN de Font Awesome</p>
+  </div>
+</body>
+</html>
