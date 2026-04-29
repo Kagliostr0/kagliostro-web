@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso de Redes | Kagliostro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <a href="index.html">
+        <img src="Espartano.png" alt="Espartano" class="avatar-logo">
+        <span>KAGLIOSTRO</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#sobre-mi">Sobre Mí</a></li>
+      <li><a href="index.html#informes">Informes</a></li>
+      <li><a href="index.html#tutoriales">Tutoriales</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <div class="menu-toggle">☰</div>
+  </nav>
+
+  <section class="section curso-pagina">
+    <div class="content-box curso-redes">
+      <a href="index.html#tutoriales" class="back-link">← Volver a Tutoriales</a>
+      
+      <h3>📡 Curso Básico de Redes desde Cero</h3>
+      
+      <div class="modulo">
+        <h4>// ¿Qué es Internet?</h4>
+        <p>Como resumen podemos decir que Internet es como se denomina comúnmente una red de redes, una gran red donde confluyen muchísimas redes alrededor del mundo. Los proveedores de internet (ISP: Internet Services Providers), que nos ofrecen su servicio, tienen una topología montada de routers, switches, nodos, servidores, etc., que están conectados a internet. Así mismo, las universidades, los gobiernos, las fuerzas armadas, organizaciones y empresas, etc., de todo el mundo, están conectadas a internet de diferentes formas ofreciendo sus diversos servicios. Internet permite que todas estas redes se comuniquen entre ellas y con los usuarios de entre casa.</p>
+      </div>
+      
+      <div class="modulo">
+        <h4>// ¿Qué es una IP?</h4>
+        <p>Las redes se basan en el protocolo TCP/IP que en realidad son dos protocolos. Un protocolo es una convención tomada para que a la hora de la comunicación entre dos dispositivos conectados a la red lo hagan de una forma que puedan entenderse entre sí y ordenadamente. Así como nosotros tenemos una convención de comunicación con otras personas para entendernos correctamente.</p>
+        <p>Explicado de forma simple, este protocolo consiste en dividir la información a enviar a otro dispositivo en paquetes pequeños a una dirección única que identifica al destinatario en la red. Esta dirección se denomina IP y únicamente identifica al destinatario de la información.</p>
+        <p>Podemos decir entonces que una <strong>IP Pública</strong> es la dirección única que tu dispositivo tiene para ser identificado en internet y es única en todo el mundo.</p>
+        <p>Dentro de las direcciones IP existen las <strong>IPv4</strong> y las <strong>IPv6</strong> (Versión 4 y versión 6). IP quiere decir "Internet Protocol" y consisten en cuatro números separados por un punto que van desde el 0 al 255 en el caso de IPv4 (ej.: 127.212.14.86)</p>
+        <p>En el mundo hay cuatro mil millones de IP públicas. En un principio había un organismo encargado de entregar estas IP a las empresas que lo solicitaban. Ahora a nivel mundial hay cinco RIR (Regional Internet Registry) que son los encargados de otorgar estas IP por regiones.</p>
+        
+        <div class="imagen-curso">
+          <img src="Pasted image 20240703191938.png" alt="Imagen sobre IP">
+        </div>
+        
+        <p>Antes, Internet se movía principalmente en entornos de universidades de EE.UU., y los cuatro mil millones de IP de IPv4 eran suficientes para todos los dispositivos conectados. Hoy en día, la cantidad de dispositivos conectados a la red supera con creces este número. Por consiguiente, los proveedores de servicios de Internet (ISP) deben rotar las IP que tienen disponibles entre los dispositivos que se desconectan y aquellos que se conectan en ese momento.</p>
+        <p>En el momento en que te conectas, se te asigna una IP pública única y exclusiva para ti, que se utiliza para la conexión llamada WAN (Wide Area Network). Esta IP pública es temporal y puede cambiar cada vez que te reconectes, a menos que contrates una IP fija.</p>
+      </div>
+      
+      <div class="modulo">
+        <h4>// ¿Qué es una WAN y una LAN?</h4>
+        <p><strong>WAN</strong> significa WIDE AREA NETWORK (Red de Área Extensa)</p>
+        <p>Cuando, por ejemplo, haces una búsqueda en GOOGLE, este responde a tu IP pública mandándote el resultado de la búsqueda. Pero si en tu casa hay más de un dispositivo, como suele pasar, Google responderá a la misma IP pública para todos los dispositivos y se identificará qué dispositivo hizo la petición con la IP privada de la red de tu hogar o empresa.</p>
+        <p>Esta red es la <strong>LAN</strong> (Local Area Network o Red de Área Local) que maneja el mismo formato de IP de cuatro números separados por un punto (ej.: 192.168.0.1)</p>
+        <p>Resumiendo, en el caso de tu comunicación con Google, te estás moviendo en una WAN y dentro de tu casa te mueves en una LAN con la IP privada. Cuando envías datos a través de internet, estos datos salen de tu LAN y viajan a través de la WAN, utilizando la dirección IP pública de tu router para comunicarse con otros dispositivos y servicios en la red global. El router en tu casa actúa como el punto de conexión entre tu LAN (donde se usan direcciones IP privadas) y la WAN (donde se usan direcciones IP públicas), permitiéndote acceder a internet y comunicarte con servicios externos.</p>
+      </div>
+      
+      <div class="modulo">
+        <h4>// ¿Qué es NAT?</h4>
+        <p>El proceso que sigue el router de traducir una IP privada a una IP pública, traer los datos solicitados a la red y traducir la IP pública de vuelta a la IP privada correcta se denomina <strong>NAT</strong> (Network Address Translation).</p>
+        <p>Este proceso permite que múltiples dispositivos en una red local (LAN) compartan una única dirección IP pública para acceder a Internet. NAT mapea las direcciones IP internas privadas a una dirección IP pública y, al recibir respuestas de Internet, traduce esas respuestas de vuelta a las direcciones IP internas correspondientes.</p>
+      </div>
+      
+      <div class="modulo">
+        <h4>// ¿Qué es la Puerta de Enlace o Gateway?</h4>
+        <p>Sintéticamente, diremos que el Gateway es el equipo que se encarga de darte acceso a internet, es decir, el router. Esto significa que en la configuración de una puerta de enlace deberíamos poner la dirección IP de nuestro router.</p>
+        <p>El Gateway (o puerta de enlace) actúa como un punto de acceso entre la red local y otras redes, generalmente Internet. Por lo tanto, al configurar dispositivos en la red, la dirección IP del router se utiliza como la puerta de enlace predeterminada.</p>
+      </div>
+      
+      <div class="modulo">
+        <h4>// ¿Qué es IPv6?</h4>
+        <p>La IPv6 nació para resolver la limitación de 4.000 millones de IP públicas de IPv4. Aunque 4.000 millones de IP pueden parecer muchas, los dispositivos conectados a internet superan con creces esa cantidad. IPv6 proporciona 340 sextillones de IPs, un número extremadamente grande, para evitar los problemas que surgieron con IPv4.</p>
+        
+        <h5>// ¿Qué pasó?</h5>
+        <p>En el pasado, no había tantos dispositivos conectados a internet, y las direcciones IPv4 asignadas por los proveedores de servicios de internet (ISP) eran tanto públicas como privadas. Cuando los dispositivos empezaron a superar el número de IPs disponibles, nació el NAT (Network Address Translation) para traducir las IPs públicas a privadas y viceversa. Nosotros podríamos contratar una o varias IPs públicas fijas a nuestro proveedor de internet, pero con IPv4 las cantidades serían limitadas. Sin embargo, con IPv6 podríamos tener una IP pública única para cada dispositivo, e incluso muchas más, ya que el número de direcciones disponibles es enorme, y ya no necesitaríamos la traducción del NAT.</p>
+        
+        <h5>// ¿Por qué no se usa solo IPv6?</h5>
+        <p>Parece sencillo usar solo IPv6, ya que sobran direcciones, pero no lo es. Internet ya está configurado desde hace mucho tiempo y esto implica la complicación de tener que apagar todos los dispositivos, switches, routers, servidores, etc., reconfigurarlo todo y volver a ponerlo en funcionamiento. Esto es imposible, ya que no podemos dejar al mundo sin internet y desconectado de todo. Por eso, conviven ambos tipos de conexiones. Sin embargo, hay países donde la utilización de IPv6 está más avanzada que en otros. Los países que se incorporaron más tarde a internet adoptaron más esta versión. Como quedan muy pocas direcciones IPv4, la opción lógica es utilizar la versión 6.</p>
+      </div>
+      
+      <div class="tags">
+        <span class="tag">#redes</span>
+        <span class="tag">#cybersecurity</span>
+        <span class="tag">#hacking</span>
+        <span class="tag">#internet</span>
+        <span class="tag">#ip</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Kagliostro | #StaySafe</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

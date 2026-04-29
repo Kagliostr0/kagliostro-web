@@ -263,6 +263,190 @@ footer {
   opacity: 0.7;
 }
 
+.curso-redes {
+  max-width: 900px;
+}
+
+.curso-redes h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-shadow: var(--green-glow);
+  border-bottom: 1px solid var(--green-dark);
+  padding-bottom: 10px;
+}
+
+.modulo {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(0, 51, 0, 0.2);
+  border-left: 3px solid var(--green);
+}
+
+.modulo h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--green);
+}
+
+.modulo h5 {
+  font-size: 1rem;
+  margin: 15px 0 10px;
+  opacity: 0.9;
+}
+
+.curso-redes table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+.curso-redes table th,
+.curso-redes table td {
+  border: 1px solid var(--green-dark);
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.curso-redes table th {
+  background: var(--green-dark);
+}
+
+.curso-redes pre {
+  background: #000;
+  padding: 15px;
+  border: 1px solid var(--green-dark);
+  border-radius: 3px;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.curso-redes ol {
+  padding-left: 20px;
+}
+
+.curso-redes li {
+  margin: 5px 0;
+}
+
+.curso-redes a {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.curso-redes a:hover {
+  text-shadow: var(--green-glow);
+}
+
+.tip {
+  background: var(--green-dark);
+  padding: 15px;
+  border: 1px solid var(--green);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.tip a {
+  color: var(--green);
+}
+
+.tags {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tags .tag {
+  font-size: 0.8rem;
+}
+
+.btn-curso {
+  display: inline-block;
+  background: var(--green-dark);
+  color: var(--green);
+  padding: 10px 20px;
+  border: 1px solid var(--green);
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.btn-curso:hover {
+  background: var(--green);
+  color: var(--bg-dark);
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--green);
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  text-shadow: var(--green-glow);
+}
+
+.curso-pagina {
+  padding-top: 120px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.curso-pagina .content-box {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.curso-pagina .modulo {
+  text-align: center;
+}
+
+.curso-pagina .modulo h4 {
+  text-align: left;
+}
+
+#tutoriales .grid {
+  justify-content: center;
+}
+
+#tutoriales .card {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px;
+}
+
+#tutoriales .card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-shadow: var(--green-glow);
+}
+
+#tutoriales .card p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.imagen-curso {
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.imagen-curso img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--green-dark);
+  border-radius: 5px;
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -294,5 +478,13 @@ footer {
 
   h2 {
     font-size: 1.8rem;
+  }
+
+  .curso-redes table {
+    font-size: 0.8rem;
+  }
+
+  .curso-redes pre {
+    font-size: 0.75rem;
   }
 }
