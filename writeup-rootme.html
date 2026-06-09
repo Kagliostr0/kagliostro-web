@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RootMe - WriteUp | Kagliostro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <a href="index.html">
+        <img src="Espartano.png" alt="Espartano" class="avatar-logo">
+        <span>KAGLIOSTRO</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#sobre-mi">Sobre Mí</a></li>
+      <li><a href="index.html#informes">Informes</a></li>
+      <li><a href="index.html#tutoriales">Tutoriales</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <div class="menu-toggle">☰</div>
+  </nav>
+
+  <section class="section curso-pagina">
+    <div class="content-box curso-redes">
+      <a href="index.html#tutoriales" class="back-link">← Volver a Tutoriales</a>
+
+      <h3>📡 RootMe - WriteUp</h3>
+
+      <div class="modulo">
+        <h4>// Escaneo de puertos</h4>
+        <p>Iniciamos con un escaneo de puertos abiertos:</p>
+        <div class="imagen-curso">
+          <img src="img/01- Primer escaneo.png" alt="Primer escaneo">
+        </div>
+      </div>
+
+      <div class="modulo">
+        <h4>// Escaneo de servicios</h4>
+        <p> hacemos un escaneo de servicios a los puertos abiertos:</p>
+        <div class="imagen-curso">
+          <img src="img/02- Segundo escaneo.png" alt="Segundo escaneo">
+        </div>
+      </div>
+
+      <div class="modulo">
+        <h4>// Página principal</h4>
+        <p>Observamos que el puerto 80 nos ofrece un servicio http y nos dirigimos a él:</p>
+        <div class="imagen-curso">
+          <img src="img/03-Pagina principal.png" alt="Página principal">
+        </div>
+      </div>
+
+      <div class="modulo">
+        <h4>// Gobuster</h4>
+        <p>Lanzamos gobuster en busca de directorios ocultos:</p>
+        <div class="imagen-curso">
+          <img src="img/04- Escaneo Gobuster.png" alt="Escaneo Gobuster">
+        </div>
+      </div>
+
+      <div class="modulo">
+        <h4>// Directorios sensibles</h4>
+        <p>Entre otros conseguimos el directorio PANEL y UPLOADS:</p>
+        <div class="imagen-curso">
+          <img src="img/Panel Upload.png" alt="Panel y Uploads">
+        </div>
+      </div>
+
+      <div class="modulo">
+        <h4>// Reverse Shell PHP</h4>
+        <p>El directorio UPLOADS nos permite subir archivos, lo que hace sensible a la página a inserción de archivos maliciosos. Como la página del index es PHP, probamos con un archivo malicioso PHP con una Reverse Shell para conseguir acceso. Buscamos código en Internet:</p>
+        <div class="imagen-curso">
+          <img src="img/05- Rshell PHP.png" alt="Reverse Shell PHP">
+        </div>
+      </div>
+
+      <div class="modulo">
+        <h4>// Preparando el archivo</h4>
+        <p>Después de descargarlo, renombramos a un nombre más corto:</p>
+        <div class="imagen-curso">
+          <img src="img/06- Renombro el archivo.png" alt="Renombrar archivo">
+        </div>
+        <p>Editamos para colocar nuestra IP Tun0 y el puerto seleccionado para recibir la reverse shell:</p>
+        <div class="imagen-curso">
+          <img src="img/07- Edicion de ip rshell.png" alt="Editar IP">
+        </div>
+      </div>
+
+      <div class="modulo">
+        <h4>// PHP no permitido</h4>
+        <p>Intentamos subirlo sin éxito ya que no nos permite subir archivos con extensión PHP:</p>
+        <div class="imagen-curso">
+          <img src="img/08- PHP no permitido.png" alt="PHP no permitido">
+        </div>
+        <p>Podemos utilizar el archivo con alguna extensión que nos permita y se pueda ejecutar en la web:</p>
+        <div class="imagen-curso">
+          <img src="img/Cambio de extencion.png" alt="Cambio de extensión">
+        </div>
+      </div>
+
+      <div class="modulo">
+        <h4>// Subiendo archivo</h4>
+        <p>Renombramos el archivo con extensión .PHP5:</p>
+        <div class="imagen-curso">
+          <img src="img/Seleccionamos el archivo a subir.png" alt="Seleccionar archivo">
+        </div>
+        <p>Ahora si pudimos subirlo con éxito:</p>
+        <div class="imagen-curso">
+          <img src="img/Subiodo con exito.png" alt="Subido con éxito">
+        </div>
+      </div>
+
+      <div class="modulo">
+        <h4>// Obteniendo Shell</h4>
+        <p>Localizamos donde se aloja el archivo en la carpeta UPLOADS. Nos aseguramos de estar en escucha por el puerto seleccionado con NETCAT:</p>
+        <div class="imagen-curso">
+          <img src="img/netcat en escucha.png" alt="Netcat en escucha">
+        </div>
+        <p>Ejecutamos el archivo y conseguimos la reverse shell:</p>
+        <div class="imagen-curso">
+          <img src="img/consegimos la reverse shell.png" alt="Reverse shell">
+        </div>
+      </div>
+
+      <div class="modulo">
+        <h4>// Tratamiento de TTY</h4>
+        <p>Funcionó. Hacemos el tratamiento de TTY para obtener una shell totalmente interactiva:</p>
+        <pre>
+script /dev/null -c bash
+Ctrl Z
+stty raw -echo; fg
+reset xterm
+export TERM=xterm
+export SHELL=bash
+        </pre>
+      </div>
+
+      <div class="modulo">
+        <h4>// User flag</h4>
+        <p>Con la shell interactiva buscamos nuestro user.txt e intentaremos escalar privilegios:</p>
+        <div class="imagen-curso">
+          <img src="img/Conseguimos la user.png" alt="User flag">
+        </div>
+      </div>
+
+      <div class="modulo">
+        <h4>// Escalada de privilegios</h4>
+        <p>Buscamos binarios con permisos SUID para ver si alguno nos permite escalar privilegios:</p>
+        <div class="imagen-curso">
+          <img src="img/Buscamos binarios con permisos SUID.png" alt="Binarios SUID">
+        </div>
+        <div class="imagen-curso">
+          <img src="img/binario python suid.png" alt="Python SUID">
+        </div>
+        <p>El binario PYTHON es uno de los sospechosos, así que intentamos:</p>
+        <div class="imagen-curso">
+          <img src="img/Escalamos con python.png" alt="Escalar con Python">
+        </div>
+      </div>
+
+      <div class="modulo">
+        <h4>// Root</h4>
+        <p>Nos movemos al directorio donde se encuentra el binario y ejecutamos. Conseguimos root:</p>
+        <div class="imagen-curso">
+          <img src="img/Conseguimos la root.png" alt="Root">
+        </div>
+        <p>Ya siendo usuario ROOT nos dirigimos al directorio de este usuario para terminar el desafío.</p>
+      </div>
+
+      <div class="tags">
+        <span class="tag">#writeup</span>
+        <span class="tag">#rootme</span>
+        <span class="tag">#ctf</span>
+        <span class="tag">#reverse-shell</span>
+        <span class="tag">#privilege-escalation</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Kagliostro | #StaySafe</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
